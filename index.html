@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perdi & Achei | Central de achados e perdidos </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="hero" id="inicio" aria-label="inicio">
+        <nav class="nav">
+            <a class="marca" href="#inicio">
+                <img src="assets/logo-perdi-achei.svg" alt="" class="marca-img" />
+            </a>
+            <div class="nav-links" aria-label="Navegação Principal">
+                <a href="#cadastro">Cadastrar</a>
+                <a href="#registros">Registros</a>
+            </div>
+        </nav>
+        <section class="hero-conteudo">
+            <div class="hero-texto">
+                <h1>Perdeu? Achou? Registre aqui</h1>
+                <p>Uma Central simples para Cadastrar objetos perdidos ou encontrados na unipar.</p>
+                <div class="acao">
+                    <!--class = "btn btn-principal": encapsulamento de classes, classes complementares-->
+                    <a href="#cadastro" class="btn btn-principal">
+                        Cadastrar objeto
+                    </a>
+                    <a href="#registros" class="btn btn-secundario">
+                        Ver Registros
+                    </a>
+                </div>
+                <!--barra lateral do site-->
+                <aside class="hero-card" aria-label="Resumo do Sistema">
+                    <img src="assets/hero-achados-perdidos.svg" alt="Ilustração de objetos" />
+                    <div class="hero-metricas">
+                        <!--Lembrança para o futuro: o js vai atualiza isso-->
+                        <div>
+                            <strong id="totalRegistros">0</strong>
+                            <span>Registros</span>
+                        </div>
+                    </div>
+                </aside>
+        </section>
+    </header>
+    <main class="container">
+        <section class="grid-principal">
+            <!--article: artigo, "foco no site"-->
+            <article class="card" id="cadatro">
+                <div class="card-cabecalho">
+                    <img src="assets/formulario.svg" alt="" />
+                    <div>
+                        <h2>Cadastrar Objeto</h2>
+                        <p>Informe os dados do objeto</p>
+                    </div>
+                </div>
+                <!--auto complete = off, nao sugere campos-->
+                <form id="formObjeto" autocomplete="off">
+                    <label>Nome do objeto</label>
+                    <input type="text" name="objeto" maxlength="80" placeholder="Ex.: Mochila, chave, carteira"
+                        required />
+                    <!--vou criar uma div para dividir em colunas-->
+                    <div class="coluna-dois">
+                        <label>tipo</label>
+                        <!--campo de seleção-->
+                        <select name="tipo" required>
+                            <option value="">Selecione</option>
+                            <option value="perdido">Perdido</option>
+                            <option value="encontrado">Encontrado</option>
+                        </select>
+                        <label>Data</label>
+                        <input type="date" name="data" required />
+                    </div>
+                    <label>Local</label>
+                    <input type="text" name="local" maxlength="100" placeholder="Ex.: Laboratorio 2, Biblioteca, Patio" required />
+                    <label>Descrição</label>
+                    <!--<textarea> permite texto longo e linhas-->
+                    <textarea name="descricao" maxlength="360" placeholder="Descreva cor, marca, detalhes..." required >
+                        <label>Contato</label>
+                        <input type="text" name="contato" maxlength="100" placeholder="E-mail, Whatsapp..." required />
+                        <button type="submit" class="btn btn-form">Salvar</button>
+                </form>
+            </article>
+    </main>
+</body>
+
+</html>
